@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\StatusPegawai;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,11 +14,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
+            'name' => 'admin',
             'email' => 'test@example.com',
+            'password' => bcrypt('admin123'),
+        ]);
+
+        StatusPegawai::factory()->create([
+            'nama_status' => 'Tetap',
+            'deskripsi' => 'Status pegawai Tetap',
+        ]);
+
+        StatusPegawai::factory()->create([
+                'nama_status' => 'Kontrak',
+                'deskripsi' => 'Status pegawai kontrak',
         ]);
     }
 }
