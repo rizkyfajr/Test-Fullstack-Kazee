@@ -5,8 +5,8 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BagianController;
 use App\Http\Controllers\HomeBackendController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Response;
 
-// Route::get('/', [HomeBackendController::class, 'index'])->name('backend-pages');
 Route::get('/dashboard', [HomeBackendController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('backend-pages');
@@ -42,3 +42,6 @@ Route::delete('/bagian/{bagian}', [BagianController::class, 'destroy'])->name('b
 require __DIR__.'/auth.php';
 
 
+Route::fallback(function () {
+    return redirect()->action([HomeBackendController::class, 'index']);
+});
