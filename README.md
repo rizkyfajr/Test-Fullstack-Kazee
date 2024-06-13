@@ -29,28 +29,23 @@ This repository contains the code for the Test Fullstack project at Kazee. It is
     DB_DATABASE=testing-app
     DB_USERNAME=root
     DB_PASSWORD=
-    ```
 
 4. Generate the application key:
 
 ```bash
    php artisan key:generate
-   ```
 
 
 5. Run the database migrations and seed the database:
 ```bash
      php artisan migrate --seed
-     ```
 
 6. Compile the assets:
 ```bash
    npm run dev
-   ```
 
 7. Start the development serve
 ```bash
     php artisan serve
-    ```
 
 8. Open your browser and visit http://localhost:8000 to see the application.
