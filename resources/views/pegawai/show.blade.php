@@ -19,11 +19,11 @@
 
                 <!-- Tampilkan informasi relasi jika diperlukan -->
                 @if ($pegawai->statusPegawai)
-                    <p class="card-text">Status Pegawai: {{ $pegawai->statusPegawai->nama }}</p>
+                    <p class="card-text">Status Pegawai: {{ $pegawai->statusPegawai->nama_status }}</p>
                 @endif
 
-                @if ($pegawai->bagian)
-                    <p class="card-text">Bagian: {{ $pegawai->bagian->nama }}</p>
+                @if ($pegawai->bagianPegawai)
+                    <p class="card-text">Bagian: {{ $pegawai->bagianPegawai->nama_bagian }}</p>
                 @endif
             </div>
         </div>

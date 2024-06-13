@@ -51,12 +51,16 @@
                 </select>
             </div>
 
+
             <div class="form-group">
-                <label for="id_bagian">Jabatan:</label>
-                <input type="text" name="id_bagian" id="id_bagian" class="form-control">
+                <label for="id_bagian">Bagian Pegawai:</label>
+                <select name="id_bagian" id="id_bagian" class="form-control">
+                    @foreach ($bagianPegawai as $bagian)
+                        <option value="{{ $bagian->id }}">{{ $bagian->nama_bagian }}</option>
+                    @endforeach
+                </select>
             </div>
 
-            <!-- Tambahkan form input untuk relasi dengan status pegawai dan bagian jika diperlukan -->
 
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pegawai;
 use App\Models\StatusPegawai;
+use App\Models\Bagian;
 use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
@@ -17,7 +18,8 @@ class PegawaiController extends Controller
     public function create()
     {
         $statusPegawai = \App\Models\StatusPegawai::all();
-        return view('pegawai.create', compact('statusPegawai'));
+        $bagianPegawai = \App\Models\Bagian::all();
+        return view('pegawai.create', compact('statusPegawai', 'bagianPegawai'));
     }
 
     public function store(Request $request)

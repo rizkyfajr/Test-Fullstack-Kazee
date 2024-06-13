@@ -3,15 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BagianController;
+use App\Http\Controllers\HomeBackendController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('backend-pages');
-});
-
-Route::get('/dashboard', function () {
-    return view('backend-pages');
-})->middleware(['auth', 'verified'])->name('backend-pages');
+// Route::get('/', [HomeBackendController::class, 'index'])->name('backend-pages');
+Route::get('/dashboard', [HomeBackendController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('backend-pages');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
