@@ -20,7 +20,7 @@ This repository contains the code for the Test Fullstack project at Kazee. It is
    composer install
    npm install
 
-3. Copy the .env.example file and rename it to .env. Update the .env file with your database configuration.
+3. Copy the .env.example file and rename it to .env. Update the .env file with your database configuration:
 
 ```bash
     DB_CONNECTION=mysql
